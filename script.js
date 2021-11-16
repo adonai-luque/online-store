@@ -23,3 +23,12 @@ let content = document.getElementById('content')
 products.forEach(product => {
   content.appendChild(card(product.name, product.url_image, product.price))
 });
+
+let queryInput = document.getElementById('query')
+let searchButton = document.querySelector('form.d-flex')
+searchButton.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  console.log(queryInput.value)
+})
+
