@@ -1,34 +1,43 @@
-const products = [{"id":5,"name":"ENERGETICA MR BIG","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/misterbig3308256.jpg","price":1490.0,"discount":20,"category":{"id":1,"name":"bebida energetica"}},{"id":6,"name":"ENERGETICA RED BULL","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/redbull8381.jpg","price":1490.0,"discount":0,"category":{"id":1,"name":"bebida energetica"}},{"id":7,"name":"ENERGETICA SCORE","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/logo7698.png","price":1290.0,"discount":0,"category":{"id":1,"name":"bebida energetica"}},{"id":8,"name":"PISCO ALTO DEL CARMEN 35º","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/alto8532.jpg","price":7990.0,"discount":10,"category":{"id":2,"name":"pisco"}},{"id":9,"name":"PISCO ALTO DEL CARMEN 40º ","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/alto408581.jpg","price":5990.0,"discount":0,"category":{"id":2,"name":"pisco"}},{"id":10,"name":"PISCO ARTESANOS 35º ","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/artesanos8818.jpg","price":3990.0,"discount":0,"category":{"id":2,"name":"pisco"}},{"id":11,"name":"PISCO BAUZA 40º ","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/bauza408831.jpg","price":4990.0,"discount":0,"category":{"id":2,"name":"pisco"}},{"id":12,"name":"PISCO CAMPANARIO 35º","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/campanario8845.jpg","price":2990.0,"discount":20,"category":{"id":2,"name":"pisco"}},{"id":13,"name":"PISCO CAMPANARIO 40º","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/campanario408881.jpg","price":3990.0,"discount":20,"category":{"id":2,"name":"pisco"}},{"id":14,"name":"PISCO ESPIRITU DEL ELQUI 40º","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/espiritu8936.jpg","price":5990.0,"discount":20,"category":{"id":2,"name":"pisco"}},{"id":15,"name":"PISCO ESPIRITU DEL ELQUI 45º","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/espiritu8957.jpg","price":6990.0,"discount":5,"category":{"id":2,"name":"pisco"}},{"id":16,"name":"PISCO HORCON QUEMADO 35º","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/horcon359049.jpg","price":6990.0,"discount":20,"category":{"id":2,"name":"pisco"}},{"id":17,"name":"PISCO HORCON QUEMADO 40º","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/horcon409062.jpg","price":7990.0,"discount":20,"category":{"id":2,"name":"pisco"}},{"id":18,"name":"PISCO HORCON QUEMADO 46º","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/horcon469075.jpg","price":8990.0,"discount":20,"category":{"id":2,"name":"pisco"}},{"id":19,"name":"PISCO MISTRAL 35º","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/mistral359200.jpg","price":4990.0,"discount":20,"category":{"id":2,"name":"pisco"}},{"id":20,"name":"PISCO MISTRAL 40º ","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/mistral409215.jpg","price":4990.0,"discount":20,"category":{"id":2,"name":"pisco"}},{"id":21,"name":"PISCO TRES ERRES 35º","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/rrr359305.jpg","price":4590.0,"discount":20,"category":{"id":2,"name":"pisco"}},{"id":22,"name":"PISCO TRES ERRES 40º","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/rrr409319.jpg","price":4990.0,"discount":20,"category":{"id":2,"name":"pisco"}},{"id":23,"name":"RON BACARDI AÑEJO","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/bacardi9450.jpg","price":4990.0,"discount":0,"category":{"id":3,"name":"ron"}},{"id":24,"name":"RON BACARDI 8 AÑOS","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/bacardianejo9463.jpg","price":5990.0,"discount":0,"category":{"id":3,"name":"ron"}},{"id":25,"name":"RON ABUELO","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/abuelo9475.jpg","price":3990.0,"discount":0,"category":{"id":3,"name":"ron"}},{"id":26,"name":"RON BARCELO AÑEJO","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/barceloanejo9553.jpg","price":4990.0,"discount":0,"category":{"id":3,"name":"ron"}},{"id":27,"name":"RON BARCELO DORADO","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/barcelodorado9567.jpg","price":3990.0,"discount":0,"category":{"id":3,"name":"ron"}},{"id":28,"name":"RON FLOR DE CAÑA 4 AÑOS","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/flor49664.jpg","price":3990.0,"discount":0,"category":{"id":3,"name":"ron"}},{"id":29,"name":"RON FLOR DE CAÑA 5 AÑOS","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/flor59677.jpg","price":4590.0,"discount":0,"category":{"id":3,"name":"ron"}},{"id":30,"name":"RON HAVANA AÑEJO RESERVA","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/havanaan-ejo9750.jpg","price":6990.0,"discount":0,"category":{"id":3,"name":"ron"}},{"id":31,"name":"RON HAVANA ESPECIAL","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/havanaespecial9768.jpg","price":5990.0,"discount":20,"category":{"id":3,"name":"ron"}},{"id":32,"name":"RON PAMPERO","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/pampero-especial0296.jpg","price":5490.0,"discount":20,"category":{"id":3,"name":"ron"}},{"id":33,"name":"RON PAMPERO ANIVERSARIO","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/ron_pampero_aniversario0311.jpg","price":20000.0,"discount":15,"category":{"id":3,"name":"ron"}},{"id":34,"name":"ENERGETICA MONSTER RIPPER","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/mosterriper0436.jpg","price":1990.0,"discount":0,"category":{"id":1,"name":"bebida energetica"}},{"id":35,"name":"ENERGETICA MAKKA DRINKS","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/makka-drinks-250ml0455.jpg","price":1190.0,"discount":0,"category":{"id":1,"name":"bebida energetica"}},{"id":36,"name":"ENERGETICA MONSTER VERDE","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/monsterverde0476.jpg","price":1990.0,"discount":0,"category":{"id":1,"name":"bebida energetica"}},{"id":37,"name":"COCA COLA ZERO DESECHABLE","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/cocazero9766.jpg","price":1490.0,"discount":0,"category":{"id":4,"name":"bebida"}},{"id":38,"name":"RON BOTRAN AÑEJO 5 AÑOS","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/ronbotran9337.jpg","price":4990.0,"discount":0,"category":{"id":3,"name":"ron"}},{"id":39,"name":"RON MITJANS","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/mitjan6396.jpg","price":2990.0,"discount":0,"category":{"id":3,"name":"ron"}},{"id":47,"name":"Maní salado","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/manisaladomp4415.jpg","price":600.0,"discount":0,"category":{"id":5,"name":"snack"}},{"id":48,"name":"SPRITE 1 1/2 Lts","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/sprite-lata-33cl5575.jpg","price":1500.0,"discount":0,"category":{"id":4,"name":"bebida"}},{"id":50,"name":"SPRITE 2 Lt","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/sprite-2lt4365.jpg","price":1800.0,"discount":0,"category":{"id":4,"name":"bebida"}},{"id":52,"name":"Fanta","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/fanta_2lt5236.jpg","price":1500.0,"discount":0,"category":{"id":4,"name":"bebida"}},{"id":53,"name":"Mani Sin Sal","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/manisinsalmp6988.jpg","price":500.0,"discount":0,"category":{"id":5,"name":"snack"}},{"id":54,"name":"Papas Fritas Lisas Bolsa Grande","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/papaslisasgrande7128.jpg","price":1490.0,"discount":0,"category":{"id":5,"name":"snack"}},{"id":55,"name":"Papas Fritas Bolsa Pequeña","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/papaslisas7271.jpg","price":500.0,"discount":0,"category":{"id":5,"name":"snack"}},{"id":56,"name":"Papas Fritas Tarro","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/78028005335657432.jpg","price":1990.0,"discount":0,"category":{"id":5,"name":"snack"}},{"id":57,"name":"COCA COLA NORMAL DESECHABLE 1500cc","url_image":null,"price":1500.0,"discount":0,"category":{"id":4,"name":"bebida"}},{"id":58,"name":"COCA COLA LIGHT DESECHABLE","url_image":null,"price":1500.0,"discount":0,"category":{"id":4,"name":"bebida"}},{"id":68,"name":"Bebida Sprite 1 Lt","url_image":null,"price":1250.0,"discount":10,"category":{"id":4,"name":"bebida"}},{"id":77,"name":"ENERGETICA MONSTER RIPPER","url_image":"","price":1990.0,"discount":0,"category":{"id":1,"name":"bebida energetica"}},{"id":79,"name":"ENERGETICA MONSTER VERDE","url_image":"","price":1990.0,"discount":0,"category":{"id":1,"name":"bebida energetica"}},{"id":87,"name":"PISCO MISTRAL 35°","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/358978.jpg","price":4990.0,"discount":0,"category":{"id":2,"name":"pisco"}},{"id":88,"name":"PISCO MISTRAL GRAN NOBEL 40°","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/grannobel9104.jpg","price":19900.0,"discount":0,"category":{"id":2,"name":"pisco"}},{"id":89,"name":"PISCO MISTRAL 40°","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/409346.jpg","price":4990.0,"discount":0,"category":{"id":2,"name":"pisco"}},{"id":90,"name":"PISCO MISTRAL 46°","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/469463.jpg","price":7890.0,"discount":0,"category":{"id":2,"name":"pisco"}},{"id":91,"name":"PISCO MISTRAL NOBEL 40°","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/nobel409551.jpg","price":19990.0,"discount":0,"category":{"id":2,"name":"pisco"}},{"id":92,"name":"PISCO MISTRAL NOBEL 46","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/nobelanejado9639.jpg","price":15990.0,"discount":15,"category":{"id":2,"name":"pisco"}},{"id":98,"name":"Cerveza Escudo Normal LATA 350CC","url_image":"","price":600.0,"discount":0,"category":{"id":6,"name":"cerveza"}},{"id":99,"name":"Cerveza Escudo Sin Filtrar LATA 350CC","url_image":"","price":800.0,"discount":0,"category":{"id":6,"name":"cerveza"}},{"id":104,"name":"ABSOLUT","url_image":"https://dojiw2m9tvv09.cloudfront.net/11132/product/absolut21381.png","price":8990.0,"discount":30,"category":{"id":7,"name":"vodka"}}]
-
-
-const card = (name, url_image='./assets/no-image.jpg', price) => {
-  if ((url_image === "") || (url_image === null)) {
-    url_image = './assets/no-image.jpg'
-  }
-  const element = document.createElement('div');
-  element.className = 'card d-flex flex-column justify-content-end align-items-center m-4';
-  element.style ='width: 18rem';
-  element.innerHTML = `
-    <img src="${url_image}" class="card-img-top mt-2 mb-4" alt="${name}">
-    <div class="d-flex flex-column justify-content-around align-items-center m-4">
-      <h5>${name}</h5>
-      <p>${price}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  `;
-  return element;
+async function fetchProducts(query = '') {
+  let url = (query === '') ? 'http://127.0.0.1:3000/products' : `http://127.0.0.1:3000/products/?query=${query}`
+  let headers = new Headers();
+  headers.append('Content-Type', 'application/json');
+  const response = await fetch(url, {header: headers});
+  return response.json()
 }
 
-let content = document.getElementById('content')
-products.forEach(product => {
-  content.appendChild(card(product.name, product.url_image, product.price))
-});
+function renderProducts(products) {
+  const card = (name, url_image='./assets/no-image.jpg', price) => {
+    if ((url_image === "") || (url_image === null)) {
+      url_image = './assets/no-image.jpg'
+    }
+    const element = document.createElement('div');
+    element.className = 'card d-flex flex-column justify-content-end align-items-center m-4';
+    element.style ='width: 18rem';
+    element.innerHTML = `
+      <img src="${url_image}" class="card-img-top mt-2 mb-4" alt="${name}">
+      <div class="d-flex flex-column justify-content-around align-items-center m-4">
+        <h5>${name}</h5>
+        <p>${price}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    `;
+    return element;
+  }
+  
+  let content = document.getElementById('content')
+  content.innerHTML = ""
+  products.forEach(product => {
+    content.append(card(product.name, product.url_image, product.price))
+  });
+}
 
 let queryInput = document.getElementById('query')
 let searchButton = document.querySelector('form.d-flex')
 searchButton.addEventListener('submit', (e) => {
   e.preventDefault();
-
-  console.log(queryInput.value)
+  let query = queryInput.value
+  if (query) fetchProducts(queryInput.value).then(products => renderProducts(products))
 })
 
+fetchProducts().then(products => renderProducts(products))
