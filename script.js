@@ -1,3 +1,5 @@
+let jsContent = document.getElementById('js-content')
+
 function fetchProducts(query = '') {
   let url = (query === '') ? 'https://adonailuque-online-store-api.herokuapp.com/products' : `https://adonailuque-online-store-api.herokuapp.com/products/?query=${query}`
   let headers = new Headers();
@@ -16,11 +18,11 @@ function fetchCategories() {
   return categories
 }
 
-const renderProducts = (products) => {
-  
-  let content = document.getElementById('content')
-  content.innerHTML = ""
+function clearJSContent() {
+  jsContent.innerHTML = ""
+}
 
+function renderProducts(products) {
   if (products.length === 0) content.innerHTML = "Sin resultados"
   
   const card = (name, url_image='./assets/no-image.jpg', price) => {
@@ -43,27 +45,62 @@ const renderProducts = (products) => {
   
   
   products.forEach(product => {
-    content.append(card(product.name, product.url_image, product.price))
+    jsContent.append(card(product.name, product.url_image, product.price))
+  });
+}
+
+let productsLink = document.getElementById('products-link')
+
+function renderCategories(categories) {
+  const categoryElement = (category) => {
+    const element = document.createElement('a');
+    element.dataset.id = category.id
+    element.textContent = category.name
+    return element;
+  }
+  
+  categories.forEach(category => {
+    jsContent.append(categoryElement(category))
   });
 }
 
 function addEventListeners() {
   let queryInput = document.getElementById('query-input')
   let searchForm = document.getElementById('search-form')
+  let productsLink = document.getElementById('products-link')
+  let categoriesLink = document.getElementById('categories-link')
+  
   searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     let query = queryInput.value
-    if (query) fetchProducts(queryInput.value).then(products => renderProducts(products))
+    if (query) fetchProducts(queryInput.value).then(products => {
+      clearJSContent()
+      renderProducts(products)
+    })
   })
   
-  queryInput.addEventListener('input', () => {
+    queryInput.addEventListener('input', () => {
     let query = queryInput.value
-    if (query === "") fetchProducts().then(products => renderProducts(products))
+    if (query === "") fetchProducts().then(products => {
+      clearJSContent()
+      renderProducts(products)
+    })
   })
+
+  categoriesLink.addEventListener('click', () => {
+    clearJSContent()
+    renderCategories(categories)
+  })
+
 }
 
+let products
+let categories
 
-Promise.all([fetchProducts(), fetchCategories()]).then(([products, categories]) => {
+
+Promise.all([fetchProducts(), fetchCategories()]).then(([fetchedProducts, fetchedCategories]) => {
+  products = fetchedProducts
+  categories = fetchedCategories
   addEventListeners()
   renderProducts(products)
   console.log(categories)
