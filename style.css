@@ -1,3 +1,11 @@
 .nav-item {
   cursor: pointer;
 }
+
+.category-li {
+  cursor: pointer;
+}
+
+.category-li:hover {
+  text-shadow: 1px 1px 2px black;
+}

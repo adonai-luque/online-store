@@ -29,13 +29,13 @@ function renderTitle(title) {
   jsContent.append(titleElement)
 }
 
-function renderProducts(products) {
+function renderProducts(products, title = true) {
   if (products.length === 0) {
     jsContent.innerHTML = '<h6>Sin resultados</h6>'
     return
   }
 
-  renderTitle('Productos')
+  if (title) renderTitle('Productos')
   
   const card = (name, url_image='./assets/no-image.jpg', price) => {
     if ((url_image === "") || (url_image === null)) {
@@ -68,6 +68,7 @@ let productsLink = document.getElementById('products-link')
 function renderCategories(categories) {
   const categoryElement = (category) => {
     const element = document.createElement('li');
+    element.className = "category-li"
     element.dataset.id = category.id
     element.textContent = category.name.toUpperCase()
     return element;
@@ -78,10 +79,20 @@ function renderCategories(categories) {
   const categoriesList = document.createElement('ul')
 
   categories.forEach(category => {
-    categoriesList.append(categoryElement(category))
+    let categoryEl = categoryElement(category)
+    categoryEl.addEventListener('click', (e) => renderCategoryProducts(e.target.dataset.id))
+    categoriesList.append(categoryEl)
   });
 
   jsContent.append(categoriesList)
+}
+
+function renderCategoryProducts(categoryId) {
+  let category = categories.find(c => c.id == categoryId)
+  clearJSContent()
+  renderTitle(category.name.toUpperCase())
+  const categoryProducts = products.filter(product => product.category.id === category.id)
+  renderProducts(categoryProducts, false)
 }
 
 function addEventListeners() {
@@ -128,6 +139,5 @@ Promise.all([fetchProducts(), fetchCategories()]).then(([fetchedProducts, fetche
   categories = fetchedCategories
   addEventListeners()
   renderProducts(products)
-  console.log(categories)
 })
 
