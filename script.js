@@ -22,8 +22,20 @@ function clearJSContent() {
   jsContent.innerHTML = ""
 }
 
+function renderTitle(title) {
+  const titleElement = document.createElement('h2')
+  titleElement.textContent = title
+
+  jsContent.append(titleElement)
+}
+
 function renderProducts(products) {
-  if (products.length === 0) jsContent.innerHTML = "Sin resultados"
+  if (products.length === 0) {
+    jsContent.innerHTML = '<h6>Sin resultados</h6>'
+    return
+  }
+
+  renderTitle('Productos')
   
   const card = (name, url_image='./assets/no-image.jpg', price) => {
     if ((url_image === "") || (url_image === null)) {
@@ -61,10 +73,7 @@ function renderCategories(categories) {
     return element;
   }
   
-  const title = document.createElement('h2')
-  title.textContent = 'Categorías'
-
-  jsContent.append(title)
+  renderTitle('Categorías')
 
   const categoriesList = document.createElement('ul')
 
