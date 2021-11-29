@@ -23,7 +23,7 @@ function clearJSContent() {
 }
 
 function renderProducts(products) {
-  if (products.length === 0) content.innerHTML = "Sin resultados"
+  if (products.length === 0) jsContent.innerHTML = "Sin resultados"
   
   const card = (name, url_image='./assets/no-image.jpg', price) => {
     if ((url_image === "") || (url_image === null)) {
@@ -43,25 +43,36 @@ function renderProducts(products) {
     return element;
   }
   
-  
-  products.forEach(product => {
-    jsContent.append(card(product.name, product.url_image, product.price))
-  });
+  const productsContainer = document.createElement('div')
+  productsContainer.className = "d-flex flex-wrap justify-content-around"
+
+  products.forEach(product => productsContainer.append(card(product.name, product.url_image, product.price)));
+
+  jsContent.append(productsContainer)
 }
 
 let productsLink = document.getElementById('products-link')
 
 function renderCategories(categories) {
   const categoryElement = (category) => {
-    const element = document.createElement('a');
+    const element = document.createElement('li');
     element.dataset.id = category.id
-    element.textContent = category.name
+    element.textContent = category.name.toUpperCase()
     return element;
   }
   
+  const title = document.createElement('h2')
+  title.textContent = 'Categorías'
+
+  jsContent.append(title)
+
+  const categoriesList = document.createElement('ul')
+
   categories.forEach(category => {
-    jsContent.append(categoryElement(category))
+    categoriesList.append(categoryElement(category))
   });
+
+  jsContent.append(categoriesList)
 }
 
 function addEventListeners() {
@@ -79,7 +90,7 @@ function addEventListeners() {
     })
   })
   
-    queryInput.addEventListener('input', () => {
+  queryInput.addEventListener('input', () => {
     let query = queryInput.value
     if (query === "") fetchProducts().then(products => {
       clearJSContent()
@@ -87,6 +98,11 @@ function addEventListeners() {
     })
   })
 
+  productsLink.addEventListener('click', () => {
+    clearJSContent()
+    renderProducts(products)
+  })
+    
   categoriesLink.addEventListener('click', () => {
     clearJSContent()
     renderCategories(categories)
