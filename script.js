@@ -1,5 +1,5 @@
 function fetchProducts(query = '') {
-  let url = (query === '') ? 'http://127.0.0.1:3000/products' : `http://127.0.0.1:3000/products/?query=${query}`
+  let url = (query === '') ? 'https://adonailuque-online-store-api.herokuapp.com/products' : `https://adonailuque-online-store-api.herokuapp.com/products/?query=${query}`
   let headers = new Headers();
   headers.append('Content-Type', 'application/json');
   let products = fetch(url, {header: headers})
@@ -8,7 +8,7 @@ function fetchProducts(query = '') {
 }
 
 function fetchCategories() {
-  let url = 'http://127.0.0.1:3000/categories'
+  let url = 'https://adonailuque-online-store-api.herokuapp.com/categories'
   let headers = new Headers();
   headers.append('Content-Type', 'application/json');
   let categories = fetch(url, {header: headers})
